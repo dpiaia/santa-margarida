@@ -13,7 +13,7 @@ const AreaDetailView: React.FC<AreaDetailViewProps> = ({ area, onBack, isOpen })
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
       <button 
         onClick={onBack}
-        className="mb-6 flex items-center gap-2 text-slate-500 hover:text-primary-700 transition-colors font-medium"
+        className="mb-6 flex items-center gap-2 text-zinc-500 hover:text-primary-700 dark:text-zinc-400 dark:hover:text-primary-400 transition-colors font-medium"
       >
         <ArrowLeft size={20} />
         Voltar para Início
@@ -52,26 +52,26 @@ const AreaDetailView: React.FC<AreaDetailViewProps> = ({ area, onBack, isOpen })
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column: Info */}
         <div className="space-y-6">
-          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-              <Clock className="text-primary-600" />
+          <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-800 shadow-sm">
+            <h3 className="font-bold text-zinc-800 dark:text-zinc-100 mb-4 flex items-center gap-2">
+              <Clock className="text-primary-600 dark:text-primary-500" />
               Horário de Funcionamento
             </h3>
             <div className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-slate-50">
-                <span className="text-slate-500 text-sm">Abertura</span>
-                <span className="font-semibold text-slate-800">{area.openTime}</span>
+              <div className="flex justify-between items-center py-2 border-b border-zinc-50 dark:border-zinc-800">
+                <span className="text-zinc-500 dark:text-zinc-400 text-sm">Abertura</span>
+                <span className="font-semibold text-zinc-800 dark:text-zinc-200">{area.openTime}</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-50">
-                <span className="text-slate-500 text-sm">Fechamento</span>
-                <span className="font-semibold text-slate-800">{area.closeTime}</span>
+              <div className="flex justify-between items-center py-2 border-b border-zinc-50 dark:border-zinc-800">
+                <span className="text-zinc-500 dark:text-zinc-400 text-sm">Fechamento</span>
+                <span className="font-semibold text-zinc-800 dark:text-zinc-200">{area.closeTime}</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-50">
-                <span className="text-slate-500 text-sm">Dias</span>
-                <span className="font-semibold text-slate-800">{area.days}</span>
+              <div className="flex justify-between items-center py-2 border-b border-zinc-50 dark:border-zinc-800">
+                <span className="text-zinc-500 dark:text-zinc-400 text-sm">Dias</span>
+                <span className="font-semibold text-zinc-800 dark:text-zinc-200">{area.days}</span>
               </div>
               {area.maintenance && (
-                <div className="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-100 text-amber-800 text-sm flex gap-3">
+                <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-100 dark:border-amber-900/30 text-amber-800 dark:text-amber-500 text-sm flex gap-3">
                   <AlertTriangle size={18} className="shrink-0" />
                   <span>Manutenção: <strong>{area.maintenance}</strong></span>
                 </div>
@@ -82,22 +82,22 @@ const AreaDetailView: React.FC<AreaDetailViewProps> = ({ area, onBack, isOpen })
 
         {/* Right Column: Rules */}
         <div className="lg:col-span-2">
-          <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 className="font-bold text-xl text-slate-800 mb-6 flex items-center gap-2">
-              <Info className="text-primary-600" />
+          <div className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-100 dark:border-zinc-800 shadow-sm">
+            <h3 className="font-bold text-xl text-zinc-800 dark:text-zinc-100 mb-6 flex items-center gap-2">
+              <Info className="text-primary-600 dark:text-primary-500" />
               Regras Específicas
             </h3>
             <ul className="grid gap-4">
               {area.specificRules.map((rule, idx) => (
                 <li key={idx} className="flex gap-4 items-start group">
-                  <div className="mt-1 w-6 h-6 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0 group-hover:bg-primary-600 group-hover:text-white transition-colors">
                     <CheckCircle size={14} />
                   </div>
-                  <span className="text-slate-600 leading-relaxed">{rule}</span>
+                  <span className="text-zinc-600 dark:text-zinc-300 leading-relaxed">{rule}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 pt-6 border-t border-slate-100 text-center text-slate-400 text-xs">
+            <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800 text-center text-zinc-400 text-xs">
               O desrespeito às normas está sujeito a notificação e multa conforme o Regimento Interno.
             </div>
           </div>

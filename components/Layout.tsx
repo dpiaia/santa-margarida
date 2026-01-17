@@ -32,9 +32,9 @@ const Layout: React.FC<LayoutProps> = ({ currentView, onNavigate, children, isDa
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col md:flex-row transition-colors duration-300">
+    <div className="min-h-screen bg-zinc-50 dark:bg-black flex flex-col md:flex-row transition-colors duration-300">
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 bg-primary-900 text-primary-50 h-screen sticky top-0 p-6 shadow-xl z-20">
+      <aside className="hidden md:flex flex-col w-64 bg-primary-900 text-primary-50 h-screen sticky top-0 p-6 shadow-xl z-20 border-r border-primary-800/50">
         <div className="flex items-center gap-3 mb-10">
           <div className="w-8 h-8 bg-primary-400 rounded-full flex items-center justify-center">
             <span className="font-bold text-primary-900">E</span>
@@ -79,14 +79,14 @@ const Layout: React.FC<LayoutProps> = ({ currentView, onNavigate, children, isDa
             <h1 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-50 tracking-tight">
               {greeting},
             </h1>
-            <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium">
+            <p className="text-zinc-500 dark:text-zinc-400 text-sm md:text-base font-medium">
               Bem-vindo ao Ecovila Santa Margarida
             </p>
           </div>
 
           <button
             onClick={toggleDarkMode}
-            className="p-3 rounded-full bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-md hover:shadow-lg transition-all border border-slate-100 dark:border-slate-700"
+            className="p-3 rounded-full bg-white dark:bg-zinc-900 text-primary-600 dark:text-primary-400 shadow-md hover:shadow-lg transition-all border border-zinc-100 dark:border-zinc-800"
             aria-label="Alternar modo noturno"
           >
             {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
@@ -100,7 +100,7 @@ const Layout: React.FC<LayoutProps> = ({ currentView, onNavigate, children, isDa
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50 safe-area-bottom">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 px-6 py-3 flex justify-between items-center z-50 safe-area-bottom">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentView === item.view;
@@ -109,7 +109,7 @@ const Layout: React.FC<LayoutProps> = ({ currentView, onNavigate, children, isDa
               key={item.view}
               onClick={() => onNavigate(item.view)}
               className={`flex flex-col items-center gap-1 transition-colors ${
-                isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-600'
+                isActive ? 'text-primary-600 dark:text-primary-400' : 'text-zinc-400 dark:text-zinc-600'
               }`}
             >
               <div className={`p-1.5 rounded-full transition-all ${

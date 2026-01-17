@@ -116,7 +116,7 @@ export const SCHEDULES: Schedule[] = [
     openTime: '06:00',
     closeTime: '23:00',
     days: 'Todos os dias',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
+    image: 'https://ecovilasantamargarida.com.br/wp-content/uploads/2025/10/Academia-ST-1.jpg',
     description: 'Espaço fitness completo para seus treinos diários.',
     specificRules: [
       'Uso obrigatório de toalha individual durante os exercícios.',
@@ -132,7 +132,7 @@ export const SCHEDULES: Schedule[] = [
     openTime: '10:00',
     closeTime: '22:00',
     days: 'Terça a Domingo',
-    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc12044f9?auto=format&fit=crop&q=80&w=800',
+    image: 'https://www.campinasnaplanta.com.br/wp-content/uploads/eco-vila-santa-margarida-espaco-churrasqueira.jpg',
     description: 'Área externa equipada para churrascos e confraternizações.',
     specificRules: [
       'Reserva obrigatória com antecedência mínima de 48h.',
@@ -156,6 +156,22 @@ export const SCHEDULES: Schedule[] = [
       'Proibido colar decorações nas paredes ou teto.',
       'Todo o lixo deve ser retirado e levado às lixeiras.',
       'Danos a eletrodomésticos serão cobrados.'
+    ]
+  },
+  {
+    id: 'playroom',
+    area: 'Brinquedoteca',
+    openTime: '08:00',
+    closeTime: '22:00',
+    days: 'Todos os dias',
+    image: 'https://ecovilasantamargarida.com.br/wp-content/uploads/2025/10/Briquedoteca-ST-1.jpg',
+    description: 'Espaço lúdico e seguro dedicado para a diversão das crianças.',
+    specificRules: [
+      'Crianças menores de 8 anos devem estar acompanhadas por um responsável.',
+      'Retirar os sapatos antes de entrar no tatame ou brinquedos.',
+      'É proibido consumir alimentos ou bebidas dentro do espaço.',
+      'Os brinquedos devem ser organizados após o uso.',
+      'Não é permitida a entrada de animais.'
     ]
   },
   {

@@ -17,12 +17,12 @@ const NearbyView: React.FC = () => {
       
       {/* Header Section */}
       <div className="text-center md:text-left space-y-2 mb-8">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3 justify-center md:justify-start">
+        <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-3 justify-center md:justify-start">
           <MapPin className="text-primary-600 dark:text-primary-500" size={32} />
           Explorar Arredores
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 max-w-2xl">
-          Confira os principais serviços e locais de lazer próximos à <span className="font-semibold text-slate-700 dark:text-slate-300">Rua Alexandre Martins Laroca, 650</span>.
+        <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl">
+          Confira os principais serviços e locais de lazer próximos à <span className="font-semibold text-zinc-700 dark:text-zinc-300">Rua Alexandre Martins Laroca, 650</span>.
         </p>
       </div>
 
@@ -34,7 +34,7 @@ const NearbyView: React.FC = () => {
           return (
             <div 
               key={place.id}
-              className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all group"
+              className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all group"
             >
               {/* Image Header */}
               <div className="relative h-48 overflow-hidden">
@@ -57,8 +57,8 @@ const NearbyView: React.FC = () => {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100 mb-1 line-clamp-1">{place.name}</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-1 flex items-center gap-1">
+                <h3 className="font-bold text-lg text-zinc-800 dark:text-zinc-100 mb-1 line-clamp-1">{place.name}</h3>
+                <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-4 line-clamp-1 flex items-center gap-1">
                   <MapPin size={12} className="shrink-0" />
                   {place.address}
                 </p>

@@ -71,18 +71,18 @@ const RulesView: React.FC = () => {
       
       {/* Header Section */}
       <div className="text-center md:text-left space-y-2">
-        <h2 className="text-3xl font-bold text-slate-900 flex items-center gap-3 justify-center md:justify-start">
-          <BookOpen className="text-primary-600" size={32} />
+        <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-3 justify-center md:justify-start">
+          <BookOpen className="text-primary-600 dark:text-primary-500" size={32} />
           Manual do Morador
         </h2>
-        <p className="text-slate-500">
+        <p className="text-zinc-500 dark:text-zinc-400">
           Pesquise o que pode, o que não pode e confira os horários de funcionamento.
         </p>
       </div>
 
       {/* Search Bar */}
       <div className="relative group">
-        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary-500 transition-colors">
+        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-400 group-focus-within:text-primary-500 transition-colors">
           <Search size={20} />
         </div>
         <input
@@ -90,24 +90,24 @@ const RulesView: React.FC = () => {
           placeholder="Ex: piscina, barulho, reforma..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-11 pr-4 py-4 bg-white border border-slate-200 rounded-2xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all shadow-sm"
+          className="w-full pl-11 pr-4 py-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl text-zinc-800 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all shadow-sm"
         />
       </div>
 
       {/* Custom Tabs */}
-      <div className="flex p-1 bg-slate-100 rounded-xl">
+      <div className="flex p-1 bg-zinc-100 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800">
         <button
           onClick={() => setActiveTab('rules')}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 ${
             activeTab === 'rules'
-              ? 'bg-white text-primary-700 shadow-sm'
-              : 'text-slate-500 hover:text-slate-700'
+              ? 'bg-white dark:bg-zinc-800 text-primary-700 dark:text-primary-400 shadow-sm'
+              : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
           }`}
         >
           <Info size={18} />
           Normas e Regras
           {searchTerm && filteredRules.length > 0 && (
-            <span className="ml-2 bg-primary-100 text-primary-700 text-[10px] px-2 py-0.5 rounded-full">
+            <span className="ml-2 bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 text-[10px] px-2 py-0.5 rounded-full">
               {filteredRules.length}
             </span>
           )}
@@ -116,14 +116,14 @@ const RulesView: React.FC = () => {
           onClick={() => setActiveTab('schedules')}
           className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 ${
             activeTab === 'schedules'
-              ? 'bg-white text-primary-700 shadow-sm'
-              : 'text-slate-500 hover:text-slate-700'
+              ? 'bg-white dark:bg-zinc-800 text-primary-700 dark:text-primary-400 shadow-sm'
+              : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
           }`}
         >
           <Clock size={18} />
           Horários e Áreas
           {searchTerm && filteredSchedules.length > 0 && (
-            <span className="ml-2 bg-primary-100 text-primary-700 text-[10px] px-2 py-0.5 rounded-full">
+            <span className="ml-2 bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400 text-[10px] px-2 py-0.5 rounded-full">
               {filteredSchedules.length}
             </span>
           )}
@@ -137,7 +137,7 @@ const RulesView: React.FC = () => {
         {activeTab === 'rules' && (
           <div className="space-y-4">
             {filteredRules.length === 0 ? (
-              <div className="text-center py-12 text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
+              <div className="text-center py-12 text-zinc-400 bg-white dark:bg-zinc-900/50 rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-800">
                 <Search size={48} className="mx-auto mb-3 opacity-20" />
                 <p>Nenhuma regra encontrada para "{searchTerm}"</p>
               </div>
@@ -149,42 +149,42 @@ const RulesView: React.FC = () => {
                 return (
                   <div 
                     key={category.id} 
-                    className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
-                      isExpanded ? 'border-primary-200 shadow-md ring-1 ring-primary-500/10' : 'border-slate-100 shadow-sm'
+                    className={`bg-white dark:bg-zinc-900 rounded-2xl border transition-all duration-300 overflow-hidden ${
+                      isExpanded ? 'border-primary-200 dark:border-primary-800 shadow-md ring-1 ring-primary-500/10' : 'border-zinc-100 dark:border-zinc-800 shadow-sm'
                     }`}
                   >
                     <button 
                       onClick={() => toggleCategory(category.id)}
-                      className="w-full p-5 flex items-center justify-between hover:bg-slate-50/50 transition-colors"
+                      className="w-full p-5 flex items-center justify-between hover:bg-zinc-50/50 dark:hover:bg-zinc-800/50 transition-colors"
                     >
                       <div className="flex items-center gap-4">
-                        <div className={`p-2.5 rounded-xl ${isExpanded ? 'bg-primary-100 text-primary-700' : 'bg-slate-50 text-slate-500'}`}>
+                        <div className={`p-2.5 rounded-xl ${isExpanded ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-400' : 'bg-zinc-50 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400'}`}>
                           <Icon size={24} />
                         </div>
-                        <h3 className={`text-lg font-bold ${isExpanded ? 'text-primary-900' : 'text-slate-700'}`}>
+                        <h3 className={`text-lg font-bold ${isExpanded ? 'text-primary-900 dark:text-primary-100' : 'text-zinc-700 dark:text-zinc-300'}`}>
                           {category.title}
                         </h3>
                       </div>
-                      <div className={`transition-transform duration-300 ${isExpanded ? 'rotate-180 text-primary-600' : 'text-slate-400'}`}>
+                      <div className={`transition-transform duration-300 ${isExpanded ? 'rotate-180 text-primary-600 dark:text-primary-400' : 'text-zinc-400'}`}>
                         <ChevronDown size={20} />
                       </div>
                     </button>
 
                     {/* Accordion Content */}
                     <div className={`grid md:grid-cols-2 gap-0 overflow-hidden transition-all duration-300 ease-in-out ${
-                      isExpanded ? 'max-h-[800px] opacity-100 border-t border-slate-100' : 'max-h-0 opacity-0'
+                      isExpanded ? 'max-h-[800px] opacity-100 border-t border-zinc-100 dark:border-zinc-800' : 'max-h-0 opacity-0'
                     }`}>
                       
                       {/* Allowed Column */}
-                      <div className="p-6 bg-primary-50/30">
-                        <h4 className="flex items-center gap-2 text-sm font-bold text-primary-700 uppercase tracking-wider mb-4">
+                      <div className="p-6 bg-primary-50/30 dark:bg-primary-900/10">
+                        <h4 className="flex items-center gap-2 text-sm font-bold text-primary-700 dark:text-primary-400 uppercase tracking-wider mb-4">
                           <Check size={16} className="stroke-[3]" />
                           O que pode
                         </h4>
                         <ul className="space-y-3">
                           {category.allowed.map((rule) => (
-                            <li key={rule.id} className="flex gap-3 text-slate-700 text-sm leading-relaxed">
-                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0 shadow-sm shadow-primary-200"></span>
+                            <li key={rule.id} className="flex gap-3 text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0 shadow-sm shadow-primary-200 dark:shadow-none"></span>
                               {searchTerm ? highlightText(rule.text, searchTerm) : rule.text}
                             </li>
                           ))}
@@ -192,15 +192,15 @@ const RulesView: React.FC = () => {
                       </div>
 
                       {/* Prohibited Column */}
-                      <div className="p-6 bg-red-50/30 md:border-l border-slate-100">
-                        <h4 className="flex items-center gap-2 text-sm font-bold text-red-600 uppercase tracking-wider mb-4">
+                      <div className="p-6 bg-red-50/30 dark:bg-red-900/10 md:border-l border-zinc-100 dark:border-zinc-800">
+                        <h4 className="flex items-center gap-2 text-sm font-bold text-red-600 dark:text-red-400 uppercase tracking-wider mb-4">
                           <X size={16} className="stroke-[3]" />
                           O que não pode
                         </h4>
                         <ul className="space-y-3">
                           {category.prohibited.map((rule) => (
-                            <li key={rule.id} className="flex gap-3 text-slate-700 text-sm leading-relaxed">
-                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 shadow-sm shadow-red-200"></span>
+                            <li key={rule.id} className="flex gap-3 text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 shadow-sm shadow-red-200 dark:shadow-none"></span>
                               {searchTerm ? highlightText(rule.text, searchTerm) : rule.text}
                             </li>
                           ))}
@@ -218,38 +218,38 @@ const RulesView: React.FC = () => {
         {activeTab === 'schedules' && (
           <div className="grid md:grid-cols-2 gap-4">
              {filteredSchedules.length === 0 ? (
-              <div className="col-span-2 text-center py-12 text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
+              <div className="col-span-2 text-center py-12 text-zinc-400 bg-white dark:bg-zinc-900/50 rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-800">
                 <Search size={48} className="mx-auto mb-3 opacity-20" />
                 <p>Nenhuma área encontrada para "{searchTerm}"</p>
               </div>
             ) : (
               filteredSchedules.map((schedule) => (
-                <div key={schedule.id} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-primary-200 transition-all group">
+                <div key={schedule.id} className="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-800 shadow-sm hover:border-primary-200 dark:hover:border-primary-700 transition-all group">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="font-bold text-lg text-slate-800 group-hover:text-primary-700 transition-colors">
+                    <h3 className="font-bold text-lg text-zinc-800 dark:text-zinc-100 group-hover:text-primary-700 dark:group-hover:text-primary-400 transition-colors">
                       {searchTerm ? highlightText(schedule.area, searchTerm) : schedule.area}
                     </h3>
-                    <div className="p-2 bg-primary-50 text-primary-600 rounded-lg">
+                    <div className="p-2 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-lg">
                       <Clock size={20} />
                     </div>
                   </div>
                   
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3 text-sm text-slate-600">
-                      <Clock size={16} className="text-slate-400" />
+                    <div className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <Clock size={16} className="text-zinc-400 dark:text-zinc-600" />
                       <span>
-                        <span className="font-medium text-slate-900">Abre:</span> {schedule.openTime} <span className="mx-1 text-slate-300">|</span> 
-                        <span className="font-medium text-slate-900">Fecha:</span> {schedule.closeTime}
+                        <span className="font-medium text-zinc-900 dark:text-zinc-200">Abre:</span> {schedule.openTime} <span className="mx-1 text-zinc-300 dark:text-zinc-700">|</span> 
+                        <span className="font-medium text-zinc-900 dark:text-zinc-200">Fecha:</span> {schedule.closeTime}
                       </span>
                     </div>
                     
-                    <div className="flex items-center gap-3 text-sm text-slate-600">
-                      <Calendar size={16} className="text-slate-400" />
+                    <div className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+                      <Calendar size={16} className="text-zinc-400 dark:text-zinc-600" />
                       <span>{schedule.days}</span>
                     </div>
 
                     {schedule.maintenance && (
-                      <div className="mt-3 py-2 px-3 bg-amber-50 border border-amber-100 rounded-lg flex items-start gap-2 text-xs text-amber-700">
+                      <div className="mt-3 py-2 px-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/30 rounded-lg flex items-start gap-2 text-xs text-amber-700 dark:text-amber-500">
                         <Info size={14} className="mt-0.5 shrink-0" />
                         <span>Manutenção: {schedule.maintenance}</span>
                       </div>
@@ -273,7 +273,7 @@ const highlightText = (text: string, highlight: string) => {
     <span>
       {parts.map((part, i) => 
         part.toLowerCase() === highlight.toLowerCase() ? (
-          <span key={i} className="bg-primary-200 text-primary-900 px-0.5 rounded">{part}</span>
+          <span key={i} className="bg-primary-200 dark:bg-primary-900 text-primary-900 dark:text-primary-100 px-0.5 rounded">{part}</span>
         ) : (
           part
         )

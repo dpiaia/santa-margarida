@@ -80,22 +80,22 @@ const HomeView: React.FC<HomeViewProps> = ({ onSelectArea }) => {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
       {/* Weather/Info Card */}
-      <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 dark:border-zinc-800 transition-colors">
+      <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 shadow-sm border border-zinc-100 dark:border-zinc-800 transition-colors">
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-6">
           
           <div className="space-y-2">
-            <h2 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+            <h2 className="text-xl md:text-2xl font-semibold text-zinc-800 dark:text-zinc-100 flex items-center gap-2">
               <span className="w-2 h-8 bg-primary-600 rounded-full"></span>
               Morumbi, Paulínia/SP
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm ml-4">
+            <p className="text-zinc-500 dark:text-zinc-400 text-sm ml-4">
               {currentTime.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}
             </p>
           </div>
 
-          <div className="flex items-center gap-6 bg-slate-50 dark:bg-zinc-800/50 p-4 rounded-2xl border border-slate-100 dark:border-zinc-700/50">
+          <div className="flex items-center gap-6 bg-zinc-50 dark:bg-zinc-800/50 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50">
             {loadingWeather ? (
-              <div className="flex items-center gap-2 text-slate-400">
+              <div className="flex items-center gap-2 text-zinc-400">
                 <Loader2 size={24} className="animate-spin" />
                 <span className="text-sm">Carregando clima...</span>
               </div>
@@ -106,10 +106,10 @@ const HomeView: React.FC<HomeViewProps> = ({ onSelectArea }) => {
                     <CloudSun size={32} />
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
+                    <div className="text-3xl font-bold text-zinc-800 dark:text-zinc-100">
                       {weather?.temperature}°C
                     </div>
-                    <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                    <div className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
                       {weather?.description}
                     </div>
                   </div>
@@ -123,7 +123,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onSelectArea }) => {
 
       {/* Areas Grid */}
       <div>
-        <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-6 flex items-center gap-2">
+        <h3 className="text-xl font-bold text-zinc-800 dark:text-zinc-200 mb-6 flex items-center gap-2">
           <Clock className="text-primary-600 dark:text-primary-500" size={24} />
           Áreas Comuns
         </h3>
