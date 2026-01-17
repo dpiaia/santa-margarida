@@ -32,12 +32,7 @@ const getSystemContext = () => {
 
 export const sendMessageToGemini = async (userMessage: string): Promise<string> => {
   try {
-    const apiKey = process.env.API_KEY;
-    if (!apiKey) {
-      return "Erro: Chave de API não configurada. Por favor, verifique o ambiente.";
-    }
-
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     // Using flash model for speed and cost-effectiveness for simple Q&A
     const response = await ai.models.generateContent({
