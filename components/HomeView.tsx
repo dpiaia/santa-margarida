@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, ArrowUpRight, CloudSun, Loader2, Droplets, Wind } from 'lucide-react';
+import { Clock, ArrowUpRight, CloudSun, Loader2 } from 'lucide-react';
 import { SCHEDULES } from '../constants';
-import { Schedule, View } from '../types';
+import { Schedule } from '../types';
 
 interface HomeViewProps {
-  onNavigate: (view: View) => void;
   onSelectArea: (areaId: string) => void;
 }
 
@@ -14,7 +13,7 @@ interface WeatherData {
   isDay: boolean;
 }
 
-const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onSelectArea }) => {
+const HomeView: React.FC<HomeViewProps> = ({ onSelectArea }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(true);

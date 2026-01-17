@@ -45,15 +45,11 @@ const App: React.FC = () => {
       const area = SCHEDULES.find(s => s.id === selectedAreaId);
       if (area) {
         const open = isOpen(area);
-        const statusColor = open 
-          ? 'text-primary-600 bg-primary-50 border-primary-200 dark:bg-primary-900/30 dark:border-primary-800 dark:text-primary-400' 
-          : 'text-red-600 bg-red-50 border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400';
         return (
           <AreaDetailView 
             area={area} 
             onBack={() => setSelectedAreaId(null)} 
             isOpen={open}
-            statusColor={statusColor}
           />
         );
       }
@@ -61,13 +57,13 @@ const App: React.FC = () => {
 
     switch (currentView) {
       case View.HOME:
-        return <HomeView onNavigate={handleNavigate} onSelectArea={setSelectedAreaId} />;
+        return <HomeView onSelectArea={setSelectedAreaId} />;
       case View.NEARBY:
         return <NearbyView />;
       case View.RULES:
         return <RulesView />;
       default:
-        return <HomeView onNavigate={handleNavigate} onSelectArea={setSelectedAreaId} />;
+        return <HomeView onSelectArea={setSelectedAreaId} />;
     }
   };
 

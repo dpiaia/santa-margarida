@@ -2,10 +2,9 @@ import React, { useState, useMemo } from 'react';
 import { RULES, SCHEDULES } from '../constants';
 import { 
   Volume2, Trees, Trash2, Check, X, Search, 
-  Clock, Calendar, BookOpen, Info, ChevronDown, ChevronUp,
+  Clock, Calendar, BookOpen, Info, ChevronDown,
   Hammer, Car, Shield, Dog
 } from 'lucide-react';
-import { RuleCategory, Schedule } from '../types';
 
 const iconMap: Record<string, React.FC<any>> = {
   Volume2,

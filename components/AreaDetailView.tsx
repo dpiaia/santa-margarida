@@ -1,15 +1,14 @@
 import React from 'react';
 import { Schedule } from '../types';
-import { ArrowLeft, Clock, Calendar, AlertTriangle, Info, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Clock, AlertTriangle, Info, CheckCircle } from 'lucide-react';
 
 interface AreaDetailViewProps {
   area: Schedule;
   onBack: () => void;
   isOpen: boolean;
-  statusColor: string;
 }
 
-const AreaDetailView: React.FC<AreaDetailViewProps> = ({ area, onBack, isOpen, statusColor }) => {
+const AreaDetailView: React.FC<AreaDetailViewProps> = ({ area, onBack, isOpen }) => {
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
       <button 
