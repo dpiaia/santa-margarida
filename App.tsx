@@ -4,7 +4,7 @@ import HomeView from './components/HomeView';
 import RulesView from './components/RulesView';
 import AreaDetailView from './components/AreaDetailView';
 import NearbyView from './components/NearbyView';
-import { View } from './types';
+import { View, Schedule } from './types';
 import { SCHEDULES } from './constants';
 
 const App: React.FC = () => {
@@ -29,7 +29,7 @@ const App: React.FC = () => {
     setSelectedAreaId(null);
   };
 
-  const isOpen = (schedule: any) => {
+  const isOpen = (schedule: Schedule) => {
       if (schedule.days === '24 Horas') return true;
       const now = new Date();
       const current = now.getHours() * 60 + now.getMinutes();
