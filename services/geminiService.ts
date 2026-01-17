@@ -1,4 +1,4 @@
-// Service removed
-export const sendMessageToGemini = async (userMessage: string): Promise<string> => {
-  return "Serviço desativado.";
+// Arquivo desativado. O serviço Gemini foi removido do projeto.
+export const sendMessageToGemini = async () => {
+  return null;
 };
