@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import HomeView from './components/HomeView';
 import RulesView from './components/RulesView';
-import AssistantView from './components/AssistantView';
 import AreaDetailView from './components/AreaDetailView';
 import NearbyView from './components/NearbyView';
 import { View } from './types';
@@ -67,8 +66,6 @@ const App: React.FC = () => {
         return <NearbyView />;
       case View.RULES:
         return <RulesView />;
-      case View.ASSISTANT:
-        return <AssistantView />;
       default:
         return <HomeView onNavigate={handleNavigate} onSelectArea={setSelectedAreaId} />;
     }

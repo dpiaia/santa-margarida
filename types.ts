@@ -33,16 +33,8 @@ export interface NearbyPlace {
   googleMapsLink: string;
 }
 
-export interface Message {
-  id: string;
-  role: 'user' | 'model';
-  content: string;
-  timestamp: Date;
-}
-
 export enum View {
   HOME = 'HOME',
   RULES = 'RULES',
-  ASSISTANT = 'ASSISTANT',
   NEARBY = 'NEARBY'
 }
