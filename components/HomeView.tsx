@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, ArrowUpRight, CloudSun, Loader2 } from 'lucide-react';
+import { Clock, ArrowUpRight, CloudSun, Loader2, Lightbulb } from 'lucide-react';
 import { SCHEDULES } from '../constants';
 import { Schedule } from '../types';
 
@@ -13,14 +13,32 @@ interface WeatherData {
   isDay: boolean;
 }
 
+const TIPS = [
+  "Ao fazer churrasco na varanda, peça para ligar o exaustor na portaria.",
+  "Não deixe crianças sozinhas na piscina.",
+  "Evite barulho após as 22h.",
+  "Separe o lixo reciclável e deposite nas lixeiras coloridas.",
+  "Receba suas encomendas na portaria para maior segurança.",
+  "Ao passear com seu pet, mantenha-o sempre na guia."
+];
+
 const HomeView: React.FC<HomeViewProps> = ({ onSelectArea }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(true);
+  const [currentTipIndex, setCurrentTipIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Rotate Tips - Slower (15s)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTipIndex((prev) => (prev + 1) % TIPS.length);
+    }, 15000);
+    return () => clearInterval(interval);
   }, []);
 
   // Fetch Weather for Paulínia, SP
@@ -118,6 +136,43 @@ const HomeView: React.FC<HomeViewProps> = ({ onSelectArea }) => {
             )}
           </div>
 
+        </div>
+      </div>
+
+      {/* Tips Card - Discreet Version */}
+      <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-2xl px-4 py-3 border border-zinc-100 dark:border-zinc-800 flex items-center gap-4">
+        <div className="bg-amber-100 dark:bg-amber-900/30 p-2 rounded-full shrink-0">
+           <Lightbulb size={16} className="text-amber-600 dark:text-amber-400" />
+        </div>
+        
+        <div className="flex-1 relative h-10">
+            {TIPS.map((tip, index) => (
+              <div 
+                key={index}
+                className={`absolute inset-0 flex items-center w-full transition-all duration-1000 ease-in-out ${
+                  index === currentTipIndex 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-4'
+                }`}
+              >
+                <p className="text-zinc-600 dark:text-zinc-400 text-xs md:text-sm font-medium leading-tight line-clamp-2">
+                  {tip}
+                </p>
+              </div>
+            ))}
+        </div>
+
+        <div className="flex gap-1 shrink-0 self-center">
+            {TIPS.map((_, idx) => (
+              <div 
+                key={idx}
+                className={`h-1 w-1 rounded-full transition-all duration-500 ${
+                  idx === currentTipIndex 
+                    ? 'bg-zinc-400 dark:bg-zinc-500 scale-125' 
+                    : 'bg-zinc-200 dark:bg-zinc-800'
+                }`}
+              />
+            ))}
         </div>
       </div>
 

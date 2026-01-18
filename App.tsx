@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import HomeView from './components/HomeView';
 import RulesView from './components/RulesView';
 import AreaDetailView from './components/AreaDetailView';
+import ProfessionalsView from './components/ProfessionalsView';
 import NearbyView from './components/NearbyView';
 import { View, Schedule } from './types';
 import { SCHEDULES } from './constants';
@@ -58,10 +59,12 @@ const App: React.FC = () => {
     switch (currentView) {
       case View.HOME:
         return <HomeView onSelectArea={setSelectedAreaId} />;
-      case View.NEARBY:
-        return <NearbyView />;
+      case View.PROFESSIONALS:
+        return <ProfessionalsView />;
       case View.RULES:
         return <RulesView />;
+      case View.NEARBY:
+        return <NearbyView />;
       default:
         return <HomeView onSelectArea={setSelectedAreaId} />;
     }

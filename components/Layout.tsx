@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, BookOpen, Sun, Moon, MapPin } from 'lucide-react';
+import { Home, BookOpen, Sun, Moon, UserCheck, MapPin } from 'lucide-react';
 import { View } from '../types';
 
 interface LayoutProps {
@@ -27,8 +27,9 @@ const Layout: React.FC<LayoutProps> = ({ currentView, onNavigate, children, isDa
   
   const navItems = [
     { view: View.HOME, label: 'Início', icon: Home },
-    { view: View.NEARBY, label: 'Por Perto', icon: MapPin },
+    { view: View.PROFESSIONALS, label: 'Indicações', icon: UserCheck },
     { view: View.RULES, label: 'Regras', icon: BookOpen },
+    { view: View.NEARBY, label: 'Arredores', icon: MapPin },
   ];
 
   return (

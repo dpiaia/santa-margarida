@@ -1,61 +1,136 @@
-import { RuleCategory, Schedule, NearbyPlace } from './types';
+import { RuleCategory, Schedule, Professional, NearbyPlace } from './types';
 
 export const CONDO_NAME = "Ecovila Santa Margarida";
 
 export const NEARBY_PLACES: NearbyPlace[] = [
   {
-    id: 'winner-mall',
-    name: 'Paulínia Winner Mall',
+    id: '1',
+    name: 'Paulínia Shopping',
     category: 'Shopping',
-    distance: '5 min (2.5 km)',
-    address: 'Av. José Paulino, 2245 - Morumbi',
-    image: 'https://images.unsplash.com/photo-1519567241046-7f570eee3c9e?auto=format&fit=crop&q=80&w=800',
-    googleMapsLink: 'https://www.google.com/maps/search/Paulínia+Winner+Mall'
+    image: 'https://images.unsplash.com/photo-1519567241046-7f570eee3d9f?q=80&w=800&auto=format&fit=crop',
+    distance: '2.5 km',
+    address: 'Av. Pref. José Lozano Araújo, 1515',
+    googleMapsLink: 'https://goo.gl/maps/xyz'
   },
   {
-    id: 'hospital-paulinia',
-    name: 'Hospital Municipal de Paulínia',
+    id: '2',
+    name: 'Parque Zeca Malavazzi',
+    category: 'Culture',
+    image: 'https://images.unsplash.com/photo-1496071868846-5c5a70999026?q=80&w=800&auto=format&fit=crop',
+    distance: '3.0 km',
+    address: 'R. Álvaro Ribeiro, 191',
+    googleMapsLink: 'https://goo.gl/maps/xyz'
+  },
+  {
+    id: '3',
+    name: 'Hospital Samaritano',
     category: 'Health',
-    distance: '8 min (3.2 km)',
-    address: 'R. Mal. Deodoro, 489 - Centro',
-    image: 'https://images.unsplash.com/photo-1587351021759-3e566b9af955?auto=format&fit=crop&q=80&w=800',
-    googleMapsLink: 'https://www.google.com/maps/search/Hospital+Municipal+de+Paulínia'
+    image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop',
+    distance: '4.2 km',
+    address: 'R. Portugal, 400',
+    googleMapsLink: 'https://goo.gl/maps/xyz'
   },
   {
-    id: 'supermarket',
+    id: '4',
+    name: 'McDonald\'s',
+    category: 'Food',
+    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop',
+    distance: '1.8 km',
+    address: 'Av. José Paulino, 2200',
+    googleMapsLink: 'https://goo.gl/maps/xyz'
+  },
+  {
+    id: '5',
+    name: 'Colégio Objetivo',
+    category: 'Education',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop',
+    distance: '1.5 km',
+    address: 'R. Santa Cruz, 120',
+    googleMapsLink: 'https://goo.gl/maps/xyz'
+  },
+  {
+    id: '6',
     name: 'Supermercado Pague Menos',
     category: 'Service',
-    distance: '4 min (1.8 km)',
-    address: 'Av. Pres. Getúlio Vargas, 255',
-    image: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=800',
-    googleMapsLink: 'https://www.google.com/maps/search/Supermercado+Pague+Menos+Paulínia'
+    image: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop',
+    distance: '1.0 km',
+    address: 'Av. José Paulino, 3200',
+    googleMapsLink: 'https://goo.gl/maps/xyz'
+  }
+];
+
+export const PROFESSIONALS: Professional[] = [
+  {
+    id: '1',
+    name: 'Sr. João da Silva',
+    category: 'Eletricista',
+    phone: '19999998888',
+    rating: 5,
+    review: 'Resolveu o curto do chuveiro rapidamente. Preço justo e muito educado.',
+    recommendedBy: 'Apto 42 - Bloco B'
   },
   {
-    id: 'theater',
-    name: 'Theatro Municipal de Paulínia',
-    category: 'Culture',
-    distance: '6 min (2.9 km)',
-    address: 'Av. Prefeito José Lozano Araújo, 1555',
-    image: 'https://images.unsplash.com/photo-1503095392237-fc550ccc92dc?auto=format&fit=crop&q=80&w=800',
-    googleMapsLink: 'https://www.google.com/maps/search/Theatro+Municipal+de+Paulínia'
+    id: '2',
+    name: 'Maria Limpezas',
+    category: 'Diarista',
+    phone: '19988887777',
+    rating: 5,
+    review: 'Caprichosa e pontual. Deixou as janelas brilhando.',
+    recommendedBy: 'Apto 104 - Bloco A'
   },
   {
-    id: 'bakery',
-    name: 'Padaria da Vila',
-    category: 'Food',
-    distance: '2 min (800m)',
-    address: 'R. Próxima ao Condomínio',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800',
-    googleMapsLink: 'https://www.google.com/maps/search/Padaria+perto+de+Ecovila+Santa+Margarida'
+    id: '3',
+    name: 'Carlos Encanamentos',
+    category: 'Encanador',
+    phone: '19977776666',
+    rating: 4,
+    review: 'Bom profissional, trocou o sifão da cozinha. Só atrasou um pouco.',
+    recommendedBy: 'Apto 12 - Bloco C'
   },
   {
-    id: 'pharmacy',
-    name: 'Farmácia Drogasil',
-    category: 'Health',
-    distance: '5 min (2.1 km)',
-    address: 'Av. José Paulino',
-    image: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=800',
-    googleMapsLink: 'https://www.google.com/maps/search/Drogasil+Paulínia'
+    id: '4',
+    name: 'Pedro Pinturas',
+    category: 'Pintor',
+    phone: '19966665555',
+    rating: 5,
+    review: 'Fez a parede de destaque da sala. Acabamento perfeito.',
+    recommendedBy: 'Apto 55 - Bloco B'
+  },
+  {
+    id: '5',
+    name: 'Ana Costuras',
+    category: 'Costureira',
+    phone: '19955554444',
+    rating: 5,
+    review: 'Fez a barra das minhas cortinas. Ficou ótimo!',
+    recommendedBy: 'Apto 31 - Bloco A'
+  },
+  {
+    id: '6',
+    name: 'Dr. Tech',
+    category: 'Informática',
+    phone: '19944443333',
+    rating: 4,
+    review: 'Formatou meu notebook e instalou o pacote Office.',
+    recommendedBy: 'Apto 22 - Bloco C'
+  },
+  {
+    id: '7',
+    name: 'Lúcia Bolos',
+    category: 'Confeitaria',
+    phone: '19933332222',
+    rating: 5,
+    review: 'O bolo de cenoura com chocolate é divino! Entrega na porta.',
+    recommendedBy: 'Apto 61 - Bloco B'
+  },
+  {
+    id: '8',
+    name: 'Marcos Fretes',
+    category: 'Transporte',
+    phone: '19922221111',
+    rating: 4,
+    review: 'Me ajudou a trazer um sofá. Tem uma picape pequena.',
+    recommendedBy: 'Apto 04 - Bloco A'
   }
 ];
 
@@ -103,7 +178,7 @@ export const SCHEDULES: Schedule[] = [
     image: 'https://ecovilasantamargarida.com.br/wp-content/themes/santamargarida/img/areas_lazer/sala-eventos.jpeg',
     description: 'Ambiente amplo e equipado para suas celebrações.',
     specificRules: [
-      'Necessário reserva prévia e pagamento da taxa de uso.',
+      'Reserva obrigatória mediante pagamento de taxa pelo app da Lello.',
       'Lista de convidados deve ser entregue na portaria com 24h de antecedência.',
       'O morador anfitrião é responsável por qualquer dano ao patrimônio.',
       'O som deve ser desligado ou reduzido drasticamente após as 22h.',
@@ -135,7 +210,7 @@ export const SCHEDULES: Schedule[] = [
     image: 'https://www.campinasnaplanta.com.br/wp-content/uploads/eco-vila-santa-margarida-espaco-churrasqueira.jpg',
     description: 'Área externa equipada para churrascos e confraternizações.',
     specificRules: [
-      'Reserva obrigatória com antecedência mínima de 48h.',
+      'Reserva e pagamento de taxa devem ser feitos pelo app da Lello.',
       'Limite de 20 convidados por reserva.',
       'A limpeza da grelha é responsabilidade do morador.',
       'Proibido som automotivo ou caixas de som de alta potência.',
@@ -151,9 +226,9 @@ export const SCHEDULES: Schedule[] = [
     image: 'https://ecovilasantamargarida.com.br/wp-content/themes/santamargarida/img/areas_lazer/area-gourmet.jpeg',
     description: 'Espaço sofisticado para jantares e pequenas recepções.',
     specificRules: [
+      'Agendamento mediante pagamento de taxa no app da Lello.',
       'Capacidade máxima de 15 pessoas.',
       'Conferir checklist de utensílios na entrada e saída.',
-      'Proibido colar decorações nas paredes ou teto.',
       'Todo o lixo deve ser retirado e levado às lixeiras.',
       'Danos a eletrodomésticos serão cobrados.'
     ]
@@ -183,10 +258,10 @@ export const SCHEDULES: Schedule[] = [
     image: 'https://ecovilasantamargarida.com.br/wp-content/themes/santamargarida/img/areas_lazer/hidro.jpeg',
     description: 'Ambiente tranquilo com hidromassagem e área de descanso.',
     specificRules: [
+      'Reserva obrigatória com pagamento de taxa pelo app da Lello.',
       'Lei do Silêncio Absoluto.',
       'Proibido consumir alimentos na área da hidro.',
       'Banho de ducha obrigatório antes do uso.',
-      'Uso máximo de 30 minutos por pessoa se houver fila.',
       'Não é permitida a entrada de animais.'
     ]
   },
@@ -199,11 +274,11 @@ export const SCHEDULES: Schedule[] = [
     image: 'https://ecovilasantamargarida.com.br/wp-content/themes/santamargarida/img/areas_lazer/sala-descanso.jpeg',
     description: 'Sala climatizada com projetor 4K e som surround.',
     specificRules: [
+      'Reserva gratuita e obrigatória pelo aplicativo da Lello.',
       'Proibido entrar com trajes de banho ou roupas molhadas.',
       'Não é permitido apoiar os pés nas poltronas.',
       'Recolher todo o lixo (pipoca, embalagens) ao sair.',
-      'Desligar todos os equipamentos e ar-condicionado após o uso.',
-      'Reserva via aplicativo para sessões exclusivas.'
+      'Desligar todos os equipamentos e ar-condicionado após o uso.'
     ]
   },
   {

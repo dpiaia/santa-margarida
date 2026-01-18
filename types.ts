@@ -23,18 +23,29 @@ export interface Schedule {
   specificRules: string[];
 }
 
+export interface Professional {
+  id: string;
+  name: string;
+  category: string;
+  phone: string;
+  rating: number; // 1 to 5
+  review: string;
+  recommendedBy: string; // Unit or Name
+}
+
 export interface NearbyPlace {
   id: string;
   name: string;
-  category: string; // 'Shopping' | 'Food' | 'Service' | 'Health'
+  category: string;
+  image: string;
   distance: string;
   address: string;
-  image: string;
   googleMapsLink: string;
 }
 
 export enum View {
   HOME = 'HOME',
   RULES = 'RULES',
+  PROFESSIONALS = 'PROFESSIONALS',
   NEARBY = 'NEARBY'
 }
