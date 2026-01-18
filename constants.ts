@@ -64,64 +64,43 @@ export const PROFESSIONALS: Professional[] = [
     id: '1',
     name: 'Romanos Estética Automotiva',
     category: 'Lava Rápido',
-    phone: '19994144143',
-    rating: 5,
-    review: 'Serviço de estética automotiva e lava rápido de confiança.',
-    recommendedBy: 'Condomínio'
+    phone: '19994144143'
   },
   {
     id: '2',
     name: 'Vetrocamp',
     category: 'Vidros',
-    phone: '19982094884',
-    rating: 5,
-    review: 'Especialistas em instalação de vidros e box para banheiro.',
-    recommendedBy: 'Condomínio'
+    phone: '19982094884'
   },
   {
     id: '3',
     name: 'Carla Queijos',
     category: 'Alimentação',
-    phone: '19996205898',
-    rating: 5,
-    review: 'Queijos frescos e produtos variados de excelente qualidade.',
-    recommendedBy: 'Condomínio'
+    phone: '19996205898'
   },
   {
     id: '4',
     name: 'Mineiro Queijos',
     category: 'Alimentação',
-    phone: '19992719111',
-    rating: 5,
-    review: 'Variedade em queijos e produtos mineiros.',
-    recommendedBy: 'Condomínio'
+    phone: '19992719111'
   },
   {
     id: '5',
     name: 'Empório Boiatti',
     category: 'Empório',
-    phone: '19994068041',
-    rating: 5,
-    review: 'Carnes e produtos de empório selecionados.',
-    recommendedBy: 'Condomínio'
+    phone: '19994068041'
   },
   {
     id: '6',
     name: 'DSW Construtora',
     category: 'Reforma',
-    phone: '19988347481',
-    rating: 5,
-    review: 'Limpeza pós obra, serviços de pedreiro e construção civil.',
-    recommendedBy: 'Condomínio'
+    phone: '19988347481'
   },
   {
     id: '7',
     name: 'Delícias da Didi',
     category: 'Restaurante',
-    phone: '19999707474',
-    rating: 5,
-    review: 'Refeições saborosas e atendimento atencioso.',
-    recommendedBy: 'Condomínio'
+    phone: '19999707474'
   }
 ];
 

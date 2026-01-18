@@ -28,9 +28,6 @@ export interface Professional {
   name: string;
   category: string;
   phone: string;
-  rating: number; // 1 to 5
-  review: string;
-  recommendedBy: string; // Unit or Name
 }
 
 export interface NearbyPlace {

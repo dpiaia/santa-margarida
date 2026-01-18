@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UserCheck, Star, MessageSquareQuote, Search, Phone, Briefcase } from 'lucide-react';
+import { UserCheck, Search, Phone, Briefcase } from 'lucide-react';
 import { PROFESSIONALS } from '../constants';
 
 const ProfessionalsView: React.FC = () => {
@@ -9,6 +9,13 @@ const ProfessionalsView: React.FC = () => {
     prof.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     prof.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const formatPhone = (phone: string) => {
+    if (phone.length === 11) {
+      return `(${phone.substring(0, 2)}) ${phone.substring(2, 7)}-${phone.substring(7)}`;
+    }
+    return phone;
+  };
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
@@ -51,27 +58,18 @@ const ProfessionalsView: React.FC = () => {
               key={prof.id}
               className="bg-white dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md hover:border-primary-200 dark:hover:border-primary-800 transition-all flex flex-col justify-between h-full"
             >
-              <div>
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <span className="inline-block px-2 py-0.5 rounded-full bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 text-xs font-semibold uppercase tracking-wide mb-2">
-                      {prof.category}
-                    </span>
-                    <h3 className="font-bold text-xl text-zinc-800 dark:text-zinc-100">{prof.name}</h3>
-                  </div>
-                  <div className="flex items-center gap-1 bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded-lg">
-                    <Star size={14} className="text-amber-500 fill-amber-500" />
-                    <span className="text-sm font-bold text-amber-700 dark:text-amber-500">{prof.rating}</span>
-                  </div>
-                </div>
-
-                <div className="bg-zinc-50 dark:bg-zinc-800/50 p-4 rounded-xl mb-4 relative">
-                  <MessageSquareQuote size={20} className="text-primary-200 dark:text-primary-800 absolute top-2 left-2 opacity-50" />
-                  <p className="text-zinc-600 dark:text-zinc-400 text-sm italic relative z-10 pl-2">
-                    "{prof.review}"
-                  </p>
-                  <p className="text-right text-xs text-zinc-400 mt-2 font-medium">
-                    — Indicado por: {prof.recommendedBy}
+              <div className="flex flex-col gap-3 mb-6">
+                <span className="self-start inline-block px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 text-xs font-bold uppercase tracking-wide">
+                  {prof.category}
+                </span>
+                
+                <div>
+                  <h3 className="font-bold text-lg md:text-xl text-zinc-800 dark:text-zinc-100 leading-tight mb-1">
+                    {prof.name}
+                  </h3>
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm font-medium flex items-center gap-2">
+                    <Phone size={14} className="text-zinc-400" />
+                    {formatPhone(prof.phone)}
                   </p>
                 </div>
               </div>
@@ -80,10 +78,10 @@ const ProfessionalsView: React.FC = () => {
                 href={`https://wa.me/55${prof.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-medium flex items-center justify-center gap-2 transition-colors shadow-lg shadow-green-500/20"
+                className="w-full py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-green-500/20 hover:shadow-green-500/30 hover:-translate-y-0.5"
               >
                 <Phone size={18} />
-                WhatsApp
+                Chamar no WhatsApp
               </a>
             </div>
           ))
