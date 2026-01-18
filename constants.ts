@@ -62,75 +62,66 @@ export const NEARBY_PLACES: NearbyPlace[] = [
 export const PROFESSIONALS: Professional[] = [
   {
     id: '1',
-    name: 'Sr. João da Silva',
-    category: 'Eletricista',
-    phone: '19999998888',
+    name: 'Romanos Estética Automotiva',
+    category: 'Lava Rápido',
+    phone: '19994144143',
     rating: 5,
-    review: 'Resolveu o curto do chuveiro rapidamente. Preço justo e muito educado.',
-    recommendedBy: 'Apto 42 - Bloco B'
+    review: 'Serviço de estética automotiva e lava rápido de confiança.',
+    recommendedBy: 'Condomínio'
   },
   {
     id: '2',
-    name: 'Maria Limpezas',
-    category: 'Diarista',
-    phone: '19988887777',
+    name: 'Vetrocamp',
+    category: 'Vidros',
+    phone: '19982094884',
     rating: 5,
-    review: 'Caprichosa e pontual. Deixou as janelas brilhando.',
-    recommendedBy: 'Apto 104 - Bloco A'
+    review: 'Especialistas em instalação de vidros e box para banheiro.',
+    recommendedBy: 'Condomínio'
   },
   {
     id: '3',
-    name: 'Carlos Encanamentos',
-    category: 'Encanador',
-    phone: '19977776666',
-    rating: 4,
-    review: 'Bom profissional, trocou o sifão da cozinha. Só atrasou um pouco.',
-    recommendedBy: 'Apto 12 - Bloco C'
+    name: 'Carla Queijos',
+    category: 'Alimentação',
+    phone: '19996205898',
+    rating: 5,
+    review: 'Queijos frescos e produtos variados de excelente qualidade.',
+    recommendedBy: 'Condomínio'
   },
   {
     id: '4',
-    name: 'Pedro Pinturas',
-    category: 'Pintor',
-    phone: '19966665555',
+    name: 'Mineiro Queijos',
+    category: 'Alimentação',
+    phone: '19992719111',
     rating: 5,
-    review: 'Fez a parede de destaque da sala. Acabamento perfeito.',
-    recommendedBy: 'Apto 55 - Bloco B'
+    review: 'Variedade em queijos e produtos mineiros.',
+    recommendedBy: 'Condomínio'
   },
   {
     id: '5',
-    name: 'Ana Costuras',
-    category: 'Costureira',
-    phone: '19955554444',
+    name: 'Empório Boiatti',
+    category: 'Empório',
+    phone: '19994068041',
     rating: 5,
-    review: 'Fez a barra das minhas cortinas. Ficou ótimo!',
-    recommendedBy: 'Apto 31 - Bloco A'
+    review: 'Carnes e produtos de empório selecionados.',
+    recommendedBy: 'Condomínio'
   },
   {
     id: '6',
-    name: 'Dr. Tech',
-    category: 'Informática',
-    phone: '19944443333',
-    rating: 4,
-    review: 'Formatou meu notebook e instalou o pacote Office.',
-    recommendedBy: 'Apto 22 - Bloco C'
+    name: 'DSW Construtora',
+    category: 'Reforma',
+    phone: '19988347481',
+    rating: 5,
+    review: 'Limpeza pós obra, serviços de pedreiro e construção civil.',
+    recommendedBy: 'Condomínio'
   },
   {
     id: '7',
-    name: 'Lúcia Bolos',
-    category: 'Confeitaria',
-    phone: '19933332222',
+    name: 'Delícias da Didi',
+    category: 'Restaurante',
+    phone: '19999707474',
     rating: 5,
-    review: 'O bolo de cenoura com chocolate é divino! Entrega na porta.',
-    recommendedBy: 'Apto 61 - Bloco B'
-  },
-  {
-    id: '8',
-    name: 'Marcos Fretes',
-    category: 'Transporte',
-    phone: '19922221111',
-    rating: 4,
-    review: 'Me ajudou a trazer um sofá. Tem uma picape pequena.',
-    recommendedBy: 'Apto 04 - Bloco A'
+    review: 'Refeições saborosas e atendimento atencioso.',
+    recommendedBy: 'Condomínio'
   }
 ];
 
