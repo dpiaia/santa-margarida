@@ -101,6 +101,18 @@ export const PROFESSIONALS: Professional[] = [
     name: 'Delícias da Didi',
     category: 'Restaurante',
     phone: '19999707474'
+  },
+  {
+    id: '8',
+    name: 'Adenilton Ar Condicionado',
+    category: 'Ar Condicionado',
+    phone: '19993027253'
+  },
+  {
+    id: '9',
+    name: 'Marcelo Ar Condicionado',
+    category: 'Ar Condicionado',
+    phone: '19987386582'
   }
 ];
 
